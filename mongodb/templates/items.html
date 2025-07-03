@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Menu Items</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="form-card">
+        <h2>Choose Your Items 🍕</h2>
+        <form method="post">
+            <select name="item_id" required>
+                {% for item in items %}
+                <option value="{{ item['_id'] }}">{{ item['name'] }} - ₹{{ item['price'] }}</option>
+                {% endfor %}
+            </select>
+            <input type="number" name="quantity" min="1" value="1" required>
+            <button type="submit" class="btn">Add to Cart</button>
+        </form>
+        <a href="{{ url_for('cart') }}" class="btn secondary">Go to Cart 🛒</a>
+    </div>
+</body>
+</html>

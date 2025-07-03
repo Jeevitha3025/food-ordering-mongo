@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Order Type</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="form-card">
+        <h2>Choose Order Type 🚗</h2>
+        <form method="post">
+            <div class="radio-option">
+                <input type="radio" name="order_type" value="dine-in" required> Dine-In
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="order_type" value="takeaway"> Takeaway
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="order_type" value="delivery"> Delivery (+5%)
+            </div>
+            <button type="submit" class="btn">Next</button>
+        </form>
+    </div>
+</body>
+</html>

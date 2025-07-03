@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Order Confirmed</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="center-card">
+        <h1>Order Confirmed 🎉</h1>
+        <p>Thank you for ordering!</p>
+        <a href="{{ url_for('home') }}" class="btn">Order Again</a>
+    </div>
+</body>
+</html>

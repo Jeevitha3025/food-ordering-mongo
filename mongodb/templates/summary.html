@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Order Summary</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h2>Order Summary</h2>
+
+    {% for item in cart %}
+        <div class="cart-item">
+            {{ item['name'] }} x {{ item['quantity'] }} — ₹{{ item['price'] * item['quantity'] }}
+        </div>
+    {% endfor %}
+
+    <div class="total">
+        Delivery Charge: ₹{{ delivery_charge }}<br>
+        <strong>Total: ₹{{ total }}</strong>
+    </div>
+
+    <form action="/">
+        <input type="submit" value="Back to Home">
+    </form>
+</body>
+</html>

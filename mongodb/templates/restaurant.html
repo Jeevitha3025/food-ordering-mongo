@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Select Restaurant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="form-card">
+        <h2>Select Restaurant 🍴</h2>
+        <form method="post">
+            {% for restaurant in restaurants %}
+            <div class="radio-option">
+                <input type="radio" id="{{ restaurant['_id'] }}" name="restaurant" value="{{ restaurant['_id'] }}" required>
+                <label for="{{ restaurant['_id'] }}">{{ restaurant['name'] }}</label>
+            </div>
+            {% endfor %}
+            <button type="submit" class="btn">Next</button>
+        </form>
+    </div>
+</body>
+</html>
